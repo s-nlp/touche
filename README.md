@@ -15,13 +15,18 @@ Every approach corresponds to its own \*.py module.
 
 # Technical
 
-To run some \*.py modules on the restarted machine, we need first to start bert-service which in turn needs restored graph in TensorFlow. Graph restoring and service starting are reproduced in the bash script before the main module starts (**restore_tf_graph.py**, **run_bash_tira3.sh**).
-The one of possible Bert weights are on https://drive.google.com/file/d/17VC9ErQ-xRrmyCUf8Oy5gFF-LcsnJosZ/view?usp=sharing
-
 The proper **Transformers**, **Fastai**, **Bert** libraries are in **requrements.txt**
 
+# Bert-service for token distributed representation.
 
-## Degree of comparativeness and comparative structure extraction
+**bert.py**, **lstm_ulmfit.py**, **lstm_ulmfit_cam_obj.py**
+
+To run some \*.py modules needed bert-service for bert token distributed representation on the restarted machine, we need first to start bert-service which in turn needs restored graph in TensorFlow. Graph restoring and service starting are reproduced in the bash script before the main module starts (**restore_tf_graph.py**, **run_bash_tira3.sh**).
+The one of possible Bert weights are on https://drive.google.com/file/d/17VC9ErQ-xRrmyCUf8Oy5gFF-LcsnJosZ/view?usp=sharing
+
+
+
+# Degree of comparativeness and comparative structure extraction
 
 **baseline_cam_obj.py**, **lstm_ulmfit_cam_obj.py**
 
