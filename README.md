@@ -7,7 +7,7 @@ Every approach corresponds to its own \*.py module.
 | Method | Module |
 | --- | --- |
 | Baseline based on an inverted index output | baseline.py |
-| LSTM ULMFiT | | LSTM ULMFiT | LSTM ULMFiT |
+| LSTM ULMFiT | lstm_ulmfit.py |
 | Transformer's attention | transformers.py |
 | Bidirectional Encoder Representations from Transformer (BERT) | bert.py |
 | Combination of Baseline, number of comparative sentences and comparativestructure extraction | baseline_cam_obj.py |
