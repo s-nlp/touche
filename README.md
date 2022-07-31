@@ -21,14 +21,16 @@ CUDA_VISIBLE_DEVICES="4, 5" python3 -m colbert.retrieve --amp --doc_maxlen 180 -
 **Model, pre-trained on MSMarco dataset:**
 
 Retrieve:
+
 CUDA_VISIBLE_DEVICES="4, 5" python3 -m colbert.retrieve --amp --doc_maxlen 180 --mask-punctuation --bsize 256 --nprobe 32 --partitions 32768 --faiss_depth 1024 --queries /../Touche22/queries_22.tsv --checkpoint /../ColBERT/experiments/MSMARCO-psg_new/train.py/msmarco.psg.l2/checkpoints/colbert.dnn --index_root /../ColBERT/indexes/ --index_name MSMARCO.L2.32x200k_22 --partitions 32768 --root /../ColBERT/experiments/ --experiment MSMARCO-psg
 
 **Model, based on checkpoint from Glasgow University:**
 
 Retrieve:
+
 CUDA_VISIBLE_DEVICES="4, 5" python3 -m colbert.retrieve --amp --doc_maxlen 180 --mask-punctuation --bsize 256 --nprobe 32 --partitions 32768 --faiss_depth 1024 --queries /../Touche22/queries_22.tsv --checkpoint /../ColBERT/experiments/MSMARCO-psg/train.py/msmarco.psg.l2/checkpoints/colbert.dnn --index_root /../ColBERT/indexes/ --index_name MSMARCO.L2.32x200k_22_old --partitions 32768 --root /../ColBERT/experiments/ --experiment MSMARCO-psg
 
-
+The post-processing of obtai result are in Test folder
  
 
 # Touche 2020
