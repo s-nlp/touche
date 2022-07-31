@@ -12,18 +12,18 @@ Train
 The first 3 steps take a significant time, so we archive the folder with checkpoints and pre-counted indexes and place it here. We also represent provided queries and documents collections in the “Queries” folder in the current repository and “ColBERT/collections” folder in archived.
 To reproduce results, you should download and unarchive the folder and do the following command:
 
-Model, fine-tuned on the previous Touche data:
+**Model, fine-tuned on the previous Touche data:**
 
 Retrieve:
 
 CUDA_VISIBLE_DEVICES="4, 5" python3 -m colbert.retrieve --amp --doc_maxlen 180 --mask-punctuation --bsize 256 --nprobe 32 --partitions 32768 --faiss_depth 1024 --queries /../Touche22/queries_22.tsv --checkpoint /../ColBERT/experiments/MSMARCO-fn/train.py/msmarco.ft.l2/checkpoints/colbert.dnn --index_root /../ColBERT/indexes/MSMARCO.L2.32x200k_22 --index_name ​​pretrain_21 --partitions 32768 --root /../ColBERT/experiments/ --experiment MSMARCO-fn
 
-Model, pre-trained on MSMarco dataset:
+**Model, pre-trained on MSMarco dataset:**
 
 Retrieve:
 CUDA_VISIBLE_DEVICES="4, 5" python3 -m colbert.retrieve --amp --doc_maxlen 180 --mask-punctuation --bsize 256 --nprobe 32 --partitions 32768 --faiss_depth 1024 --queries /../Touche22/queries_22.tsv --checkpoint /../ColBERT/experiments/MSMARCO-psg_new/train.py/msmarco.psg.l2/checkpoints/colbert.dnn --index_root /../ColBERT/indexes/ --index_name MSMARCO.L2.32x200k_22 --partitions 32768 --root /../ColBERT/experiments/ --experiment MSMARCO-psg
 
-Model, based on checkpoint from Glasgow University:
+**Model, based on checkpoint from Glasgow University:**
 
 Retrieve:
 CUDA_VISIBLE_DEVICES="4, 5" python3 -m colbert.retrieve --amp --doc_maxlen 180 --mask-punctuation --bsize 256 --nprobe 32 --partitions 32768 --faiss_depth 1024 --queries /../Touche22/queries_22.tsv --checkpoint /../ColBERT/experiments/MSMARCO-psg/train.py/msmarco.psg.l2/checkpoints/colbert.dnn --index_root /../ColBERT/indexes/ --index_name MSMARCO.L2.32x200k_22_old --partitions 32768 --root /../ColBERT/experiments/ --experiment MSMARCO-psg
