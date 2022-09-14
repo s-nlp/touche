@@ -1,4 +1,7 @@
+
 # Touche 2022
+
+All mentioned chekpoints are available at https://zenodo.org/record/7078839#.YyG3VmRBxhE
 
 The main track of this stage is employing the ColBERT model to rank passages.
 
