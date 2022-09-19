@@ -30,7 +30,7 @@ You may have acsess to:
 
 If you have only ColBERT model checkpoints (without archieve version of full ColBERT pipeline), as downloaded from ZENODO, you firstly should create **index** and **index faiss**.
 
-CUDA_VISIBLE_DEVICES="2,3,4,5" python3 -m colbert.index --amp --doc_maxlen 180 --mask-punctuation --bsize 256 --checkpoint /notebook/ColBERT/regular_checkpoints/folder_with_main_chekpoints/edinburg_colbert.dnn --collection /notebook/ColBERT/collections/touche21_psgs.tsv --index_root /notebook/ColBERT/indexes/ --index_name full_bert_mscmarco --root /notebook/ColBERT/experiments/ --experiment full_bert_msmarco
+CUDA_VISIBLE_DEVICES="2,3,4,5" python3 -m colbert.index --amp --doc_maxlen 180 --mask-punctuation --bsize 256 --checkpoint /notebook/ColBERT/regular_checkpoints/folder_with_main_chekpoints/**edinburg_colbert.dnn** --collection /notebook/ColBERT/collections/**touche21_psgs.tsv** --index_root /notebook/ColBERT/indexes/ --index_name full_bert_mscmarco --root /notebook/ColBERT/experiments/ --experiment full_bert_msmarco
  
 These steps take a significant time, so we archive the folder with checkpoints and pre-counted indexes. We also represent provided queries and documents collections in the “collections” folder in the current repository and “ColBERT/collections” folder in archived pipeline.
 If you have archieved pipeline, you can reproduce result by the following command:
