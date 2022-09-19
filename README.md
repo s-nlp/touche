@@ -1,7 +1,16 @@
 
-# Touche 2022
+#Touche 2022
 
+## Data your need
+
+1) Chekpoints of ColBERT model.
 All mentioned chekpoints are available at https://zenodo.org/record/7078839#.YyG3VmRBxhE
+
+2) Collection of Touche passages in proper format.
+In Touche/collections folder, touche21_psgs.tsv file
+
+3) Collection of Touche queries in proper format
+Touche/collections folder, queries_22.tsv
 
 The main track of this stage is employing the ColBERT model to rank passages.
 
@@ -33,7 +42,12 @@ Retrieve:
 
 CUDA_VISIBLE_DEVICES="4, 5" python3 -m colbert.retrieve --amp --doc_maxlen 180 --mask-punctuation --bsize 256 --nprobe 32 --partitions 32768 --faiss_depth 1024 --queries /../Touche22/queries_22.tsv --checkpoint /../ColBERT/experiments/MSMARCO-psg/train.py/msmarco.psg.l2/checkpoints/colbert.dnn --index_root /../ColBERT/indexes/ --index_name MSMARCO.L2.32x200k_22_old --partitions 32768 --root /../ColBERT/experiments/ --experiment MSMARCO-psg
 
-The post-processing of obtai result are in Test folder
+The post-processing of obtained result are in Test folder.
+
+** Before Retrieving **
+If you have only ColBERT model checkpoint, as downloaded from ZENODO, you firstly should create **index** and **index faiss**.
+
+CUDA_VISIBLE_DEVICES="2,3,4,5" python3 -m colbert.index --amp --doc_maxlen 180 --mask-punctuation --bsize 256 --checkpoint /notebook/ColBERT/regular_checkpoints/folder_with_main_chekpoints/edinburg_colbert.dnn --collection /notebook/ColBERT/collections/touche21_psgs.tsv --index_root /notebook/ColBERT/indexes/ --index_name full_bert_mscmarco --root /notebook/ColBERT/experiments/ --experiment full_bert_msmarco
  
 
 # Touche 2020
