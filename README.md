@@ -1,7 +1,7 @@
 
-## Touche 2022
+# Touche 2022
 
-# Data your need
+## Data your need
 
 1) Chekpoints of ColBERT model.
 All mentioned chekpoints are available at https://zenodo.org/record/7078839#.YyG3VmRBxhE
@@ -16,10 +16,16 @@ The main track of this stage is employing the ColBERT model to rank passages.
 
 Employing Colbert consists of 4 stage:
 
-Train
+## Train
 - Create regular index
 - Create faiss index
 - Retrieve
+
+**Before Retrieving**
+If you have only ColBERT model checkpoint, as downloaded from ZENODO, you firstly should create **index** and **index faiss**.
+
+CUDA_VISIBLE_DEVICES="2,3,4,5" python3 -m colbert.index --amp --doc_maxlen 180 --mask-punctuation --bsize 256 --checkpoint /notebook/ColBERT/regular_checkpoints/folder_with_main_chekpoints/edinburg_colbert.dnn --collection /notebook/ColBERT/collections/touche21_psgs.tsv --index_root /notebook/ColBERT/indexes/ --index_name full_bert_mscmarco --root /notebook/ColBERT/experiments/ --experiment full_bert_msmarco
+ 
 
 The first 3 steps take a significant time, so we archive the folder with checkpoints and pre-counted indexes and place it here. We also represent provided queries and documents collections in the “Queries” folder in the current repository and “ColBERT/collections” folder in archived.
 To reproduce results, you should download and unarchive the folder and do the following command:
@@ -44,13 +50,7 @@ CUDA_VISIBLE_DEVICES="4, 5" python3 -m colbert.retrieve --amp --doc_maxlen 180 -
 
 The post-processing of obtained result are in Test folder.
 
-** Before Retrieving **
-If you have only ColBERT model checkpoint, as downloaded from ZENODO, you firstly should create **index** and **index faiss**.
-
-CUDA_VISIBLE_DEVICES="2,3,4,5" python3 -m colbert.index --amp --doc_maxlen 180 --mask-punctuation --bsize 256 --checkpoint /notebook/ColBERT/regular_checkpoints/folder_with_main_chekpoints/edinburg_colbert.dnn --collection /notebook/ColBERT/collections/touche21_psgs.tsv --index_root /notebook/ColBERT/indexes/ --index_name full_bert_mscmarco --root /notebook/ColBERT/experiments/ --experiment full_bert_msmarco
- 
-
-## Touche 2020
+# Touche 2020
 Code for reproducing of our submission to the CLEF-2020 shared task on argument retrieval.
 
 This repository contains some approaches to information retrieval task.
